@@ -1,0 +1,314 @@
+﻿
+namespace = middle_east_decisions
+
+
+
+
+######################################
+# Revive the Israel Empire
+# by Cho JongE
+###############################
+
+
+middle_east_decisions.1111 = {
+	type = character_event
+	title = middle_east_decisions.1111.t
+	desc = middle_east_decisions.1111.desc
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	theme = realm
+
+	immediate = {
+		play_music_cue = "mx_cue_crusade_starts"
+		hidden_effect = {
+			save_scope_as = scoped_ruler
+			# De jure shifts.
+			title:k_jerusalem = {
+				set_de_jure_liege_title = title:e_israel
+			}
+			title:k_syria = {
+				set_de_jure_liege_title = title:e_israel
+			}
+			title:k_mesopotamia = {
+				set_de_jure_liege_title = title:e_israel
+			}
+			title:k_arabia = {
+				set_de_jure_liege_title = title:e_israel
+			}
+			faith:ashari.religion = {
+				every_faith = {
+					change_fervor = +30
+				}
+			}
+			faith:catholic.religion = {
+				every_faith = {
+					change_fervor = +30
+				}
+			}
+			every_held_title = { # Should shift all dejure of all Empires owned at the time.
+				limit = {
+					tier = tier_empire
+				}
+				every_in_de_jure_hierarchy = {
+					limit = {
+						tier = tier_kingdom
+					}
+					set_de_jure_liege_title = title:e_israel
+					
+				}
+			}
+			every_held_title = { # And any other held Kingdom.
+				limit = {
+					tier = tier_kingdom
+				}
+				set_de_jure_liege_title = title:e_israel
+			}
+			if = {
+				limit = {
+					completely_controls = title:k_israel # Just in case...
+				}
+				title:k_israel = {
+					set_de_jure_liege_title = title:e_israel
+				}
+			}
+			if = {
+				limit = {
+					completely_controls = title:k_egypt
+				}
+				title:k_egypt = {
+					set_de_jure_liege_title = title:e_israel
+				}
+			}
+			else_if = { # Otherwise just switch Sinai to Jerusalem
+				limit = {
+					NOT = { completely_controls = title:k_egypt }
+				}
+				title:d_sinai = {
+					set_de_jure_liege_title = title:e_israel
+				}
+			}
+			faith = {
+			
+			change_fervor = major_fervor_gain
+		}
+		}
+		hidden_effect = {
+		
+		    add_trait = messiah
+			
+						
+			primary_title = { save_scope_as = realm_1 }
+
+			dynasty = {
+				every_dynasty_member = {
+					limit = {
+						NOT = { this = root }
+						is_independent_ruler = yes
+						highest_held_title_tier >= tier_kingdom
+					}
+					primary_title = { add_to_list = dynasty_realms }
+				}
+			}
+
+		
+		
+		}
+	}
+
+	option = {
+		name = middle_east_decisions.1111.a
+		form_israel_scripted_effect = yes
+		# Send narrative fluff to other players (if any).
+		every_ruler = {
+			limit = {
+				is_landed = yes
+				NOT = { this = root }
+				capital_province = {
+					OR = {
+						geographical_region = world_europe_west
+						geographical_region = world_middle_east
+					}
+				}
+			}
+			trigger_event = middle_east_decisions.1112
+		}
+		hidden_effect = {
+			random = {
+				chance = 35
+				every_held_title = {
+					limit = {
+						tier = tier_county
+						NOT = { faith = root.faith }
+					}
+					set_county_faith = root.faith
+				}
+			}
+			every_vassal = { # Muslims abandon Faith.
+				limit = {
+					faith.religion = faith:ashari.religion
+					NOT = { has_trait = zealous }
+				}
+				random = {
+					chance = 35
+					set_character_faith = root.faith
+					every_held_title = {
+						limit = { tier = tier_county }
+						set_county_faith = root.faith
+					}
+				}
+			}
+			every_vassal = { # Culture conversion.
+				limit = {
+					has_same_culture_group_as = root
+				}
+				random = {
+					chance = 50
+					set_culture = culture:hebrews
+					capital_county = { set_county_culture = culture:hebrews }
+				}
+			}
+		}
+	}
+}
+
+# Players react.
+middle_east_decisions.1112 = {
+	type = character_event
+	title = middle_east_decisions.1111.t
+	desc = {
+		first_valid = {
+			# jewish reaction.
+			triggered_desc = {
+				trigger = {
+					faith.religion = faith:rabbinism.religion
+					faith.religion = faith:samaritan.religion
+			        faith.religion = faith:haymanot.religion
+				    faith.religion = faith:malabarism.religion
+				    faith.religion = faith:kabarism.religion
+				    faith.religion = faith:karaism.religion
+				   	}
+				desc = middle_east_decisions.1112.desc.christians
+			}
+			# Muslim reaction.
+			triggered_desc = {
+				trigger = {
+					faith.religion = faith:ashari.religion
+				}
+				desc = middle_east_decisions.1112.desc.muslims
+			}
+			# Others.
+			triggered_desc = {
+				trigger = {
+					NOR = {
+						faith.religion = faith:rabbinism.religion
+						faith.religion = faith:ashari.religion
+					}
+				}
+				desc = middle_east_decisions.1112.desc.others
+			}
+		}
+	}
+	theme = realm
+	left_portrait = {
+		character = scope:scoped_ruler
+		animation = personality_zealous
+	}
+
+	immediate = {
+		#Play a suitably crusader-themed song for Christians.
+		if = {
+			limit = {
+				faith = { religion_tag = christianity_religion }
+			}
+			play_music_cue = "mx_cue_crusade_starts"
+		}
+		#And something a bit more revenge-driven for non-Christians.
+		else = { play_music_cue = "mx_cue_combat_2" }
+	}
+
+	option = {
+		name = middle_east_decisions.1112.a
+		trigger = {
+			faith.religion = faith:rabbinism.religion
+		}
+	}
+	option = {
+		name = middle_east_decisions.1112.b
+		trigger = {
+			faith.religion = faith:ashari.religion
+		}
+		add_opinion = {
+			target = scope:scoped_ruler
+			modifier = destroyed_papacy_opinion
+		}
+		stress_impact = {
+			zealous = minor_stress_impact_gain
+		}
+	}
+	option = {
+		name = middle_east_decisions.1112.c
+		trigger = {
+			NOR = {
+				faith.religion = faith:rabbinism.religion
+				faith.religion = faith:ashari.religion
+			}
+		}
+	}
+}
+
+##################################################
+# Embrace Hebrews culture
+# by Cho JongE
+##################################################
+
+middle_east_decisions.2001 = {
+	type = character_event
+	title = middle_east_decisions.2001.t
+	desc = middle_east_decisions.2001.desc
+	theme = culture_change
+	left_portrait = {
+		character = scope:embracer
+		animation = personality_bold
+	}
+
+	immediate = {
+		save_scope_as = embracer
+		culture = { save_scope_as = embracer_former_culture }
+	}
+
+	option = {
+		name = middle_east_decisions.2001.a
+		embrace_hebrews_culture_effect = yes
+		hidden_effect = { # Moved here from embrace_hebrews_culture_decision
+			# Send event to other players
+			
+		}
+	}
+}
+
+# Players informed
+middle_east_decisions.2002 = {
+	type = character_event
+	title = middle_east_decisions.2001.t
+	desc = middle_east_decisions.2002.desc
+	theme = culture_change
+	left_portrait = {
+		character = scope:embracer
+		animation = personality_bold
+	}
+
+	option = { # Not norman
+		name = middle_east_decisions.2002.a
+		trigger = {
+			NOT = { has_culture = culture:norman }
+		}
+	}
+	option = { # Also norman
+		name = middle_east_decisions.2002.b
+		trigger = {
+			has_culture = culture:norman
+		}
+	}
+}

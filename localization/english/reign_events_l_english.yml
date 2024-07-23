@@ -1,0 +1,8 @@
+l_english:
+  reign.1.title: "The Enigmatic Queen"
+  reign.1.desc: "A young and captivating queen has arrived at your court, claiming sanctuary and offering an alliance. Her name is Mary, Queen of Scots, and her presence brings both opportunity and peril. With her come tales of political intrigue, romantic entanglements, and whispers of dark, supernatural forces. As she seeks your support to reclaim her throne, you must decide how to navigate this potential alliance."
+
+  reign.1.option_a: "Welcome Queen Mary with Open Arms"
+  reign.1.option_b: "Offer Limited Support"
+  reign.1.option_c: "Politely Decline and Suggest She Seeks Aid Elsewhere"
+  reign.1.option_d: "Secretly Align with Mary's Enemies"
