@@ -1,0 +1,9 @@
+﻿l_english:
+ K5_common_evens.0100.t:0 "The Eclipse"
+ K5_common_evens.0100.desc:0 "A rare celestial event known as the Eclipse has begun. During this time, the boundary between the mortal realm and the astral world weakens, and malevolent forces gather strength. Strange occurrences and dark omens have been reported throughout your realm. How will you face this impending doom?"
+ K5_common_evens.0100.a:0 "Seek Out the Apostles"
+ K5_common_evens.0100.a.tt:0 "Investigate the source of these dark forces and confront the apostles."
+ K5_common_evens.0100.b:0 "Fortify Your Defenses"
+ K5_common_evens.0100.b.tt:0 "Strengthen the defenses of your realm to protect against the malevolent forces."
+ K5_common_evens.0100.c:0 "Consult the Occult"
+ K5_common_evens.0100.c.tt:0 "Turn to dark rituals and forbidden knowledge to gain power over these forces."

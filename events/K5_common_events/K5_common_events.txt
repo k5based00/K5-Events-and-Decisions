@@ -1,0 +1,65 @@
+﻿namespace = K5_common_events
+
+
+K5_common_evens.0100 = {
+	type = character_event
+	title = K5_common_evens.0100.t
+	desc = K5_common_evens.0100.desc
+#	theme =
+
+	trigger = {
+		stress_level >= 1
+		OR = {
+			has_trait = wrathful
+			has_trait = paranoid
+		}
+		OR = {
+			martial >= 12
+			intrigue >= 12
+		}
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = K5_common_evens.0100.a
+		custom_tooltip = K5_common_evens.0100.a.tt
+		random_list = {
+			60 = {
+				#gain artifact
+			}
+
+			40 = {
+				add_prestige = -100
+				add_trait = wounded_2
+			}
+		}
+	}
+
+	option = {
+		name = K5_common_evens.0100.b
+		custom_tooltip = K5_common_evens.0100.b.tt
+		remove_short_term_gold = 100
+		
+#		random_list = {
+#			30 = {
+#				trigger_event = {
+#					id = 
+#					days = 30
+#				}
+#			}
+#
+#			70 = {} # No effect
+#		}
+	}
+
+	option = {
+		name = K5_common_evens.0100.c
+		custom_tooltip = K5_common_evens.0100.c.tt
+		add_trait = possessed_1
+		add_intrigue_skill = 3
+	}
+}
