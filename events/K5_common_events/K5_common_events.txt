@@ -30,6 +30,8 @@ K5_common_evens.0100 = {
 		random_list = {
 			60 = {
 				#gain artifact
+				#create_artifact_wall_banner_kaviani_effect = {OWNER = this} dont work
+				add_martial_skill = 2
 			}
 
 			40 = {
@@ -43,7 +45,15 @@ K5_common_evens.0100 = {
 		name = K5_common_evens.0100.b
 		custom_tooltip = K5_common_evens.0100.b.tt
 		remove_short_term_gold = 100
-		
+		every_held_title = {
+			limit = {
+				this = root.capital_county
+			}
+			add_county_modifier = {
+				modifier = fortify_defenses_modifier
+			}
+			
+		}
 #		random_list = {
 #			30 = {
 #				trigger_event = {
