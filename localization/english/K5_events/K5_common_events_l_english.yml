@@ -7,3 +7,15 @@
  K5_common_evens.0100.b.tt:0 "Strengthen the defenses of your realm to protect against the malevolent forces."
  K5_common_evens.0100.c:0 "Consult the Occult"
  K5_common_evens.0100.c.tt:0 "Turn to dark rituals and forbidden knowledge to gain power over these forces."
+
+ K5_common_evens.0101.t:0 "The Cult Unveiled"
+ K5_common_evens.0101.desc:0 "After fortifying your defenses, your spies report discovering a hidden cult operating within your realm. This cult, dedicated to the malevolent forces empowered by the Eclipse, has been responsible for many of the strange occurrences and dark omens plaguing your lands. Now is the time to decide how to deal with this insidious threat."
+ K5_common_evens.0101.a:0 "Root Out the Cult"
+ K5_common_evens.0101.a.tt:0 "Mobilize your forces to hunt down and eradicate the cult members."
+ K5_common_evens.0101.b:0 "Infiltrate and Subvert"
+ K5_common_evens.0101.b.tt:0 "Send your best spies to infiltrate the cult and turn its members to your side."
+ K5_common_evens.0100.b.ltt1:0 "You discover a hidden cult in your realm"
+ K5_common_evens.0101.c:0 "Exploit the Cult"
+ K5_common_evens.0101.c.tt:0 "Leverage the cult dark power for your own ends, despite the risks."
+ 
+ 
