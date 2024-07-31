@@ -27,10 +27,11 @@ K5_common_events.0100 = {
 	option = {
 		name = K5_common_evens.0100.a
 		custom_tooltip = K5_common_evens.0100.a.tt
+		
 		random_list = {
 			60 = {
 				#gain artifact
-				#create_artifact_wall_banner_kaviani_effect = {OWNER = this} dont work
+				generate_romantic_trinket_effect = { OWNER = this }
 				add_martial_skill = 2
 			}
 
