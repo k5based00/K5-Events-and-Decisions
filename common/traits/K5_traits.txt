@@ -1,0 +1,5 @@
+﻿demons_pact = {
+	icon = paragon.dds #create a icon for the trait
+	martial = 2
+	intrigue = 2
+}

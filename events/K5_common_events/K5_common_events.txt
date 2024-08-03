@@ -199,7 +199,18 @@ K5_common_events.0102 = {
 		random_list = {
 			70 = {
 				add_gold = 100
-				#add opinion of religious head
+				if = {
+					limit = {						
+							exists = root.faith.religious_head
+					}
+					root.faith.religious_head = {
+						add_opinion = {
+							target = root
+							modifier = religion_head_opinion
+							opinion = 20
+						}
+					}
+				}
 			}
 
 			30 = {
@@ -212,7 +223,7 @@ K5_common_events.0102 = {
 	option = {
 		name = K5_common_events.0102.c
 		custom_tooltip = K5_common_events.0102.c.tt
-		#trait = demons_pact create the trait
+		add_trait = demons_pact
 		add_piety = -50
 		add_stress = 20
 		random_list = {

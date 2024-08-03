@@ -19,12 +19,12 @@
  K5_common_events.0101.c.tt:0 "Leverage the cult dark power for your own ends, despite the risks."
 
  K5_common_events.0102.t:0 "Demonic Retribution"
- K5_common_events.0102.desc:0 "Despite your previous refusal, the demon has returned, seeking vengeance for your defiance. Dark omens and catastrophic events plague your realm as the demon’s wrath descends upon you. How will you face this malevolent force?"
+ K5_common_events.0102.desc:0 "Despite your previous refusal, the demon has returned, seeking vengeance for your defiance. Dark omens and catastrophic events plague your realm as the demons wrath descends upon you. How will you face this malevolent force?"
  K5_common_events.0102.a:0 "Confront the Demon"
  K5_common_events.0102.a.tt:0 "Gather your most loyal warriors and confront the demon head-on."
-K5_common_events.0102.b:0 "Seek Divine Intervention"
+ K5_common_events.0102.b:0 "Seek Divine Intervention"
  K5_common_events.0102.b.tt:0 "Turn to the church and seek divine help to banish the demon."
-K5_common_events.0102.c:0 "Attempt to Bargain Again"
+ K5_common_events.0102.c:0 "Attempt to Bargain Again"
  K5_common_events.0102.c.tt:0 "Attempt to renegotiate with the demon, offering a new bargain."
  
  
