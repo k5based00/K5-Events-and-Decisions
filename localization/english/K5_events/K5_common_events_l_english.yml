@@ -5,8 +5,12 @@
  K5_common_events.0100.a.tt:0 "Investigate the source of these dark forces and confront the apostles."
  K5_common_events.0100.b:0 "Fortify Your Defenses"
  K5_common_events.0100.b.tt:0 "Strengthen the defenses of your realm to protect against the malevolent forces."
+ K5_common_events.0100.b.ltt1:0 "You discover a hidden cult in your realm"
+ K5_common_events.0100.c.ltt1:0 "A demon will be summoned"
  K5_common_events.0100.c:0 "Consult the Occult"
  K5_common_events.0100.c.tt:0 "Turn to dark rituals and forbidden knowledge to gain power over these forces."
+ 
+ 
 
  K5_common_events.0101.t:0 "The Cult Unveiled"
  K5_common_events.0101.desc:0 "After fortifying your defenses, your spies report discovering a hidden cult operating within your realm. This cult, dedicated to the malevolent forces empowered by the Eclipse, has been responsible for many of the strange occurrences and dark omens plaguing your lands. Now is the time to decide how to deal with this insidious threat."
@@ -14,7 +18,7 @@
  K5_common_events.0101.a.tt:0 "Mobilize your forces to hunt down and eradicate the cult members."
  K5_common_events.0101.b:0 "Infiltrate and Subvert"
  K5_common_events.0101.b.tt:0 "Send your best spies to infiltrate the cult and turn its members to your side."
- K5_common_events.0100.b.ltt1:0 "You discover a hidden cult in your realm"
+
  K5_common_events.0101.c:0 "Exploit the Cult"
  K5_common_events.0101.c.tt:0 "Leverage the cult dark power for your own ends, despite the risks."
 
@@ -26,6 +30,17 @@
  K5_common_events.0102.b.tt:0 "Turn to the church and seek divine help to banish the demon."
  K5_common_events.0102.c:0 "Attempt to Bargain Again"
  K5_common_events.0102.c.tt:0 "Attempt to renegotiate with the demon, offering a new bargain."
+
+ K5_common_events.0103.t:0 "Demon's Bargain"
+ K5_common_events.0103.desc:0 "The ritual was successful, and a powerful demon has been summoned. It offers you immense power in exchange for a dark price. Will you accept the bargain?"
+ K5_common_events.0103.a:0 "Accept the Bargain"
+ K5_common_events.0103.a.tt:0 "Accept the demon's offer and gain immense power."
+ K5_common_events.0103.b:0 "Reject the Bargain"
+ K5_common_events.0103.b.tt:0 "Refuse the demon's offer and banish it from this realm."
+ K5_common_events.0103.b.ltt1:0 "Despite your refusal, the demon will return."
+ K5_common_events.0103.c:0 "Attempt to Bind the Demon"
+ K5_common_events.0103.c.tt:0 "Attempt to bind the demon to your will without accepting its bargain."
+ 
  
  
  

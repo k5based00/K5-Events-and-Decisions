@@ -1,7 +1,7 @@
 ﻿namespace = K5_common_events
 
 
-K5_common_events.0100 = {
+K5_common_events.0100 = { #The Ecplipse Event
 	type = character_event
 	title = K5_common_events.0100.t
 	desc = K5_common_events.0100.desc
@@ -73,14 +73,24 @@ K5_common_events.0100 = {
 		custom_tooltip = K5_common_events.0100.c.tt
 		add_trait = possessed_1
 		add_intrigue_skill = 3
-		trigger_event = {
-			id = K5_common_events.0102
-			months = 3
+		random_list = {
+			50 = {
+				custom_tooltip = K5_common_events.0100.c.ltt1
+				trigger_event = {
+					id = K5_common_events.0103
+					months = 6
+				}
+			}
+
+			50 = {
+				#No effect
+			}
 		}
+		
 	}
 }
 
-K5_common_events.0101 = {
+K5_common_events.0101 = { #The Cult Unveiled
 	type = character_event
 	title = K5_common_events.0101.t
 	desc = K5_common_events.0101.desc
@@ -165,7 +175,7 @@ K5_common_events.0101 = {
 	}
 }
 
-K5_common_events.0102 = {
+K5_common_events.0102 = {  #Demonic Retribution
 	type = character_event
 	title = K5_common_events.0102.t
 	desc = K5_common_events.0102.desc
@@ -244,8 +254,74 @@ K5_common_events.0102 = {
 			}
 
 			50 = {
-				
+				# No effect
 			}
 		}
+	}
+}
+
+K5_common_events.0103 = { #Demon's Bargain
+	type = character_event
+	title = K5_common_events.0103.t
+	desc = K5_common_events.0103.desc
+
+	immediate = {
+		create_character = {
+			gender = male
+			name = "Demonic Knight"
+			dynasty = none
+			culture = root.culture
+			faith = root.faith
+			random_traits = yes
+			save_scope_as = demonic_knight
+			prowess = {15 25} 
+			martial = {15 20}
+		}
+	}
+
+
+	option = {
+		name = K5_common_events.0103.a
+		custom_tooltip = K5_common_events.0103.a.tt
+		add_trait = demons_pact
+		add_piety = -100
+		add_stress = 50
+	}
+
+	option = {
+		name = K5_common_events.0103.b
+		custom_tooltip = K5_common_events.0103.b.tt
+		add_piety = 100
+		add_stress = -20
+		random_list = {
+			30 = {
+				custom_tooltip = K5_common_events.0103.b.ltt1
+				trigger_event = {
+					id = K5_common_events.0102
+					months = 6
+				}
+			}
+
+			70 = {
+				#no effect
+			}
+		}
+		
+	}
+
+	option = {
+		name = K5_common_events.0103.c
+		custom_tooltip = K5_common_events.0103.c.tt
+		random_list = {
+			50 = {
+				add_courtier = scope:demonic_knight
+			}
+
+			50 = {
+				add_prestige = -150
+				add_trait = wounded_2
+			}	
+		}
+		
 	}
 }
