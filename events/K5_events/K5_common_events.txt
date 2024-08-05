@@ -1,0 +1,327 @@
+﻿namespace = K5_common_events
+
+
+K5_common_events.0100 = { #The Ecplipse Event
+	type = character_event
+	title = K5_common_events.0100.t
+	desc = K5_common_events.0100.desc
+ #	theme =
+
+	trigger = {
+		stress_level >= 1
+		OR = {
+			has_trait = wrathful
+			has_trait = paranoid
+		}
+		OR = {
+			martial >= 12
+			intrigue >= 12
+		}
+	}
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = K5_common_events.0100.a
+		custom_tooltip = K5_common_events.0100.a.tt
+		
+		random_list = {
+			60 = {
+				#gain artifact
+				generate_romantic_trinket_effect = { OWNER = this }
+				add_martial_skill = 2
+			}
+
+			40 = {
+				add_prestige = -100
+				add_trait = wounded_2
+			}
+		}
+	}
+
+	option = {
+		name = K5_common_events.0100.b
+		custom_tooltip = K5_common_events.0100.b.tt
+		remove_short_term_gold = 100
+		every_held_title = {
+			limit = {
+				this = root.capital_county
+			}
+			add_county_modifier = {
+				modifier = fortify_defenses_modifier
+			}
+			
+		}
+		random_list = {
+			30 = {
+				custom_tooltip = K5_common_events.0100.b.ltt1
+				trigger_event = {
+					id = K5_common_events.0101
+					days = 30
+				}
+			}
+
+			70 = {} # No effect
+		}
+	}
+
+	option = {
+		name = K5_common_events.0100.c
+		custom_tooltip = K5_common_events.0100.c.tt
+		add_trait = possessed_1
+		add_intrigue_skill = 3
+		random_list = {
+			50 = {
+				custom_tooltip = K5_common_events.0100.c.ltt1
+				trigger_event = {
+					id = K5_common_events.0103
+					months = 6
+				}
+			}
+
+			50 = {
+				#No effect
+			}
+		}
+		
+	}
+}
+
+K5_common_events.0101 = { #The Cult Unveiled
+	type = character_event
+	title = K5_common_events.0101.t
+	desc = K5_common_events.0101.desc
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	immediate = {
+		create_character = {
+			gender = male
+			name = "Demonic Ally"
+			dynasty = none
+			culture = root.culture
+			faith = root.faith
+			random_traits = yes
+			save_scope_as = demonic_partner
+			prowess = 25 
+			martial = 15
+		}
+	}
+
+	option = {
+		name = K5_common_events.0101.a
+		custom_tooltip = K5_common_events.0101.a.tt
+		random_list = {
+			70 = {
+				add_prestige = 150
+				add_stress = -20
+				#10% valuable artifact
+				random_list = {
+					10 = {
+						generate_romantic_trinket_effect = { OWNER = this }
+					}
+
+					90 = {}
+				}
+			}
+
+			30 = {
+				remove_short_term_gold = 100
+				add_trait = wounded_2
+			}
+		}
+	}
+
+	option = {
+		name = K5_common_events.0101.b
+		custom_tooltip = K5_common_events.0101.b.tt
+		random_list = {
+			60 = {
+				add_trait = schemer
+				add_intrigue_skill = 2
+				add_gold = 100
+			}
+
+			40 = {
+				add_trait = paranoid
+				add_prestige = -50
+				add_stress = 30
+			}
+		}
+	}
+
+	option = {
+		name = K5_common_events.0101.c
+		custom_tooltip = K5_common_events.0101.c.tt
+		add_trait = witch
+		random_list = {
+			50 = {
+				add_martial_skill = 3
+				##add character to court				
+				add_courtier = scope:demonic_partner
+			}
+
+			50 = {
+				add_trait = wounded_2
+				remove_short_term_gold = 200
+			}
+		}
+	}
+}
+
+K5_common_events.0102 = {  #Demonic Retribution
+	type = character_event
+	title = K5_common_events.0102.t
+	desc = K5_common_events.0102.desc
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = K5_common_events.0102.a
+		custom_tooltip = K5_common_events.0102.a.tt
+		random_list = {
+			60 = {
+				add_prestige = 200
+				add_stress = -20
+				add_trait = brave
+			}
+
+			40 = {
+				add_trait = wounded_2
+				remove_short_term_gold = 100
+			}
+		}
+	}
+
+	option = {
+		name = K5_common_events.0102.b
+		custom_tooltip = K5_common_events.0102.b.tt
+		add_piety = -200
+		random_list = {
+			70 = {
+				add_gold = 100
+				if = {
+					limit = {						
+							exists = root.faith.religious_head
+					}
+					root.faith.religious_head = {
+						add_opinion = {
+							target = root
+							modifier = religion_head_opinion
+							opinion = 20
+						}
+					}
+				}
+			}
+
+			30 = {
+				add_piety = -100
+				add_stress = 30
+			}
+		}
+	}
+
+	option = {
+		name = K5_common_events.0102.c
+		custom_tooltip = K5_common_events.0102.c.tt
+		add_trait = demons_pact
+		add_piety = -50
+		add_stress = 20
+		random_list = {
+			50 = {
+				#change to a random demonic artifact
+				generate_romantic_trinket_effect = { OWNER = this }
+			}
+
+			50 = {
+
+			}
+		}
+		random_list = {
+			50 = {
+				add_trait = wounded_2
+				add_prestige = -100
+				add_trait = possessed_1
+			}
+
+			50 = {
+				# No effect
+			}
+		}
+	}
+}
+
+K5_common_events.0103 = { #Demon's Bargain
+	type = character_event
+	title = K5_common_events.0103.t
+	desc = K5_common_events.0103.desc
+
+	immediate = {
+		create_character = {
+			gender = male
+			name = "Demonic Knight"
+			dynasty = none
+			culture = root.culture
+			faith = root.faith
+			random_traits = yes
+			save_scope_as = demonic_knight
+			prowess = {15 25} 
+			martial = {15 20}
+		}
+	}
+
+
+	option = {
+		name = K5_common_events.0103.a
+		custom_tooltip = K5_common_events.0103.a.tt
+		add_trait = demons_pact
+		add_piety = -100
+		add_stress = 50
+	}
+
+	option = {
+		name = K5_common_events.0103.b
+		custom_tooltip = K5_common_events.0103.b.tt
+		add_piety = 100
+		add_stress = -20
+		random_list = {
+			30 = {
+				custom_tooltip = K5_common_events.0103.b.ltt1
+				trigger_event = {
+					id = K5_common_events.0102
+					months = 6
+				}
+			}
+
+			70 = {
+				#no effect
+			}
+		}
+		
+	}
+
+	option = {
+		name = K5_common_events.0103.c
+		custom_tooltip = K5_common_events.0103.c.tt
+		random_list = {
+			50 = {
+				add_courtier = scope:demonic_knight
+			}
+
+			50 = {
+				add_prestige = -150
+				add_trait = wounded_2
+			}	
+		}
+		
+	}
+}

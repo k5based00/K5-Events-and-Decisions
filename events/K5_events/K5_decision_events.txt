@@ -1,0 +1,30 @@
+﻿namespace = K5_decision_events
+
+K5_decision_events.0100 = {
+	type = character_event
+	title = K5_decision_events.0100.t
+	desc = K5_decision_events.0100.desc
+
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = K5_decision_events.0100.a
+		custom_tooltip = K5_decision_events.0100.a.tt
+		
+	}
+
+	option = {
+		name = K5_decision_events.0100.b
+		custom_tooltip = K5_decision_events.0100.b.tt
+		
+	}
+
+	option = {
+		name = K5_decision_events.0100.c
+		custom_tooltip = K5_decision_events.0100.c.tt		
+	}
+
+}

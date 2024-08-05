@@ -1,0 +1,10 @@
+﻿l_english:
+ K5_decision_events.0100.t:0 "The Band of the Hawk is Formed"
+ K5_decision_events.0100.desc:0 "With the decision made, your vision for the Band of the Hawk begins to take shape. You oversee the formation of this elite company, watching as seasoned veterans, noble youths, or eager recruits gather under your banner. The air is filled with the sound of clashing steel and the camaraderie of warriors united by a common cause. This new force, loyal only to you, promises to be a powerful asset in your future endeavors."
+ K5_decision_events.0100.a:0 "Recruit Seasoned Veterans"
+ K5_decision_events.0100.a.tt:0 "Hire experienced warriors to form the core of your elite company."
+ K5_decision_events.0100.b:0 "Train Young Nobles"
+ K5_decision_events.0100.b.tt:0 "Train the young nobles of your court to become elite warriors loyal to you."
+ K5_decision_events.0100.c:0 "Accept All Willing Recruits"
+ K5_decision_events.0100.c.tt:0 "Open your ranks to anyone willing to prove their worth, regardless of background."
+ 
