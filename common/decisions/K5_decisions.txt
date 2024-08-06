@@ -15,11 +15,9 @@
 		}
 		
 		martial >= 12
+		gold >= 150
 	}
 
-	cost = {
-		gold = 150
-	}
 
 	effect = {
 		trigger_event = {

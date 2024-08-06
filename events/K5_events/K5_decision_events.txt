@@ -13,18 +13,56 @@ K5_decision_events.0100 = {
 	option = {
 		name = K5_decision_events.0100.a
 		custom_tooltip = K5_decision_events.0100.a.tt
-		
+		remove_short_term_gold = 150
+		add_character_modifier = {
+			modifier = custom_recruitment_veterans_modifier
+			years = 5
+		}
+		spawn_army = {
+			uses_supply = yes
+			inheritable = yes
+			name = spawn_band_of_the_hawk
+			men_at_arms = {
+				type = band_of_the_hawk
+				stacks = 5
+			}
+
+			location = capital_province
+		}
 	}
 
 	option = {
 		name = K5_decision_events.0100.b
 		custom_tooltip = K5_decision_events.0100.b.tt
-		
+		remove_short_term_gold = 100
+		add_character_modifier = {
+			modifier = trained_nobles_modifier
+			years = 5
+		}
+		every_courtier = {
+			limit = {
+				is_adult = yes
+				martial >= 8
+			}
+			prev = {
+				add_hook = {
+					type = loyalty_hook
+					target = prev
+				}
+			}
+			
+		}
 	}
 
 	option = {
 		name = K5_decision_events.0100.c
 		custom_tooltip = K5_decision_events.0100.c.tt		
+		remove_short_term_gold = 50
+		add_character_modifier = {
+			modifier = willing_recruits_modifier 
+			years = 5
+		}
+		add_intrigue_skill = 1
 	}
 
 }
